@@ -20,7 +20,7 @@ function start(){
     squares.forEach((square) => {
         square.addEventListener('mouseover', (event) => {
             console.log(event.target);
-            square.setAttribute('style', 'background-color: black');
+            square.setAttribute('style', `background-color: black; max-width: ${960 / gridSize}px; height: ${960 / gridSize}px;`);
         })
     });
 }
