@@ -1,0 +1,17 @@
+#grid-container{
+    border: 1px solid black;
+    max-width: 960px;
+    max-height: 960px;
+}
+
+.row{
+    display: flex;
+}
+
+.square{
+    width: 4px;
+    height: 4px;
+    flex: 1 0 auto;
+    background-color: white;
+    border: 1px solid gray;
+}
