@@ -1,17 +1,25 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
 #grid-container{
     border: 1px solid black;
-    max-width: 960px;
-    max-height: 960px;
+    width: 960px;
+    height: 960px;
 }
 
 .row{
     display: flex;
+    max-width: 960px;
+    max-height: 960px;
 }
 
 .square{
-    width: 4px;
-    height: 4px;
     flex: 1 0 auto;
-    background-color: white;
-    border: 1px solid gray;
+    background-color: rgb(247, 243, 243);
+    /* border: 1px solid rgb(230, 228, 228); */
 }
