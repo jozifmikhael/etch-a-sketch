@@ -19,8 +19,17 @@ function start(){
 
     squares.forEach((square) => {
         square.addEventListener('mouseover', (event) => {
-            console.log(event.target);
-            square.setAttribute('style', `background-color: black; max-width: ${960 / gridSize}px; height: ${960 / gridSize}px;`);
+            // gets rgba of current square
+            let squareCS = window.getComputedStyle(square);
+            let rgba = squareCS.backgroundColor.replace(/[^\d,.]/g, '').split(',');
+            // darken square by 25% unless its already black
+            if (rgba[rgba.length-1] == 1){
+                rgba = rgba.join();
+            } else {
+                rgba[rgba.length-1] = +rgba[rgba.length-1] + 0.25;
+                rgba = rgba.join();
+            }
+            square.setAttribute('style', `background-color: rgba(${rgba}); max-width: ${960 / gridSize}px; height: ${960 / gridSize}px;`);
         })
     });
 }
